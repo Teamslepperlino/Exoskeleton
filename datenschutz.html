@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Datenschutzerklärung</title>
+  <link rel="stylesheet" href="../styles/style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <img class="logo" src="../img/logo.png" alt="Logo" />
+      <p>Datenschutzerklärung</p>
+      <button onclick="window.location.href='/'">Zurück zur Startseite</button>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="Werbe">Datenschutzerklärung</h1>
+
+    <section class="bewertungen">
+      <h2>1. Allgemeine Hinweise</h2>
+      <p>
+        Der Schutz deiner Daten ist uns wichtig. In dieser Datenschutzerklärung
+        erfährst du, welche personenbezogenen Daten wir erheben und wie wir sie
+        verwenden.
+      </p>
+    </section>
+
+    <section class="bewertungen">
+      <h2>2. Verantwortlicher</h2>
+      <p>
+        Max Mustermann<br />
+        Musterstraße 123<br />
+        12345 Musterstadt<br />
+        E-Mail:
+        <a href="mailto:max@mustermann.de">max@mustermann.de</a>
+      </p>
+    </section>
+
+    <section class="bewertungen">
+      <h2>3. Erhebung und Speicherung personenbezogener Daten</h2>
+      <p>
+        Beim Besuch dieser Website werden automatisch Informationen (z. B.
+        IP-Adresse, Datum und Uhrzeit) durch den Browser an unseren Server
+        übermittelt. Diese Daten werden ausschließlich für technische Zwecke
+        gespeichert.
+      </p>
+    </section>
+
+    <section class="bewertungen">
+      <h2>4. Nutzung deiner Daten</h2>
+      <p>
+        Wir verwenden deine personenbezogenen Daten ausschließlich zur
+        Bereitstellung und Optimierung unserer Webseite und Dienste. Eine
+        Weitergabe an Dritte erfolgt nicht, es sei denn, es ist gesetzlich
+        vorgeschrieben oder du hast eingewilligt.
+      </p>
+    </section>
+
+    <section class="bewertungen">
+      <h2>5. Cookies</h2>
+      <p>
+        Diese Website verwendet Cookies, um die Benutzerfreundlichkeit zu
+        verbessern. Du kannst in deinem Browser einstellen, ob Cookies
+        gespeichert werden sollen.
+      </p>
+    </section>
+
+    <section class="bewertungen">
+      <h2>6. Betroffenenrechte</h2>
+      <p>
+        Du hast das Recht auf Auskunft, Berichtigung, Löschung oder
+        Einschränkung der Verarbeitung deiner Daten sowie das Recht auf
+        Datenübertragbarkeit. Wende dich dazu bitte an uns (siehe Kontakt oben).
+      </p>
+    </section>
+
+    <section class="bewertungen">
+      <h2>7. Widerspruchsrecht</h2>
+      <p>
+        Du kannst der Verarbeitung deiner personenbezogenen Daten jederzeit
+        widersprechen, soweit diese auf Grundlage von berechtigten Interessen
+        erfolgt.
+      </p>
+    </section>
+
+    <section class="bewertungen">
+      <h2>8. Beschwerderecht</h2>
+      <p>
+        Du hast das Recht, dich bei einer Aufsichtsbehörde zu beschweren, wenn
+        du der Meinung bist, dass die Verarbeitung deiner personenbezogenen
+        Daten nicht rechtmäßig erfolgt.
+      </p>
+    </section>
+
+    <section class="bewertungen">
+      <h2>9. Aktualität und Änderungen</h2>
+      <p>
+        Diese Datenschutzerklärung ist aktuell gültig (Stand: Mai 2025). Wir
+        behalten uns vor, sie anzupassen, um sie an neue rechtliche Anforderungen
+        oder Änderungen unserer Dienste anzupassen.
+      </p>
+    </section>
+
+    <section class="bewertungen">
+      <h2>10. Weiterleitungen zu YouTube</h2>
+      <p>
+        Unsere Website enthält Links zu YouTube (z. B. zu unserem YouTube-Kanal).
+        Wenn du auf diese Links klickst, wirst du direkt zu YouTube weitergeleitet.
+        Beim Besuch von YouTube gelten die Datenschutzbestimmungen von
+        YouTube/Google. Wir haben keinen Einfluss darauf, welche Daten dort
+        erhoben und verarbeitet werden.
+      </p>
+    </section>
+  </main>
+
+  <footer class="fade-in">
+    <p>With Love in germany oder so</p>
+    <div class="recht">
+      <a href="../legal/impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <div class="social">
+      <a href="https://youtube.com"><img src="../img/youtube.png" alt="youtube" /></a>
+    </div>
+  </footer>
+
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px',
+    };
+    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach((fader) => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+</body>
+</html>

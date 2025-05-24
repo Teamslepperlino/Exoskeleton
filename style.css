@@ -1,0 +1,187 @@
+/* styles/style.css */
+
+/* Grundlegendes Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header und Navigation */
+header {
+  background-color: #222;
+  color: white;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #222;
+}
+
+nav img.logo {
+  height: 40px;
+}
+
+nav p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+nav button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #00aaff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+nav button:hover {
+  background-color: #0077cc;
+}
+
+/* Hauptbereich */
+main {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+main img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+h1.Werbe {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #0077cc;
+}
+
+/* Bewertungen */
+.bewertungen {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.bewertungen h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.profile-1 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.profilbild {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+.username {
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background-color: #111;
+  color: #eee;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  border-top: 1px solid #333;
+}
+
+footer p {
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+footer .recht {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+footer .recht a {
+  color: #00aaff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+footer .recht a:hover {
+  color: #0077cc;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav img.logo {
+    height: 40px;
+    margin-bottom: 0;
+  }
+
+  nav p {
+    font-size: 1rem;
+  }
+
+  nav button {
+    width: auto;
+  }
+}
+
+  .profile-1 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  h1.Werbe {
+    font-size: 1.5rem;
+  }
+
+  .bewertungen {
+    padding: 1rem;
+  }
+}
+/* Fade-In Effekt */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

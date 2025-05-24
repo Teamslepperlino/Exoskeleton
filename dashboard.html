@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <img class="logo" src="../img/logo.png" alt="Logo">
+      <p>Dashboard</p>
+      <button onclick="window.location.href='/'">Zurück zur Startseite</button>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="Werbe">Willkommen im Dashboard</h1>
+    <p>Hier findest du deine wichtigsten Informationen und Einstellungen.</p>
+
+    <section class="bewertungen">
+      <h2>Deine letzten Aktivitäten</h2>
+      <div class="profile-1">
+        <img class="profilbild" src="../img/user.png" alt="Profilbild">
+        <div>
+          <p class="username">Benutzername</p>
+          <p class="bewertung">Zuletzt eingeloggt am 24.05.2025</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bewertungen">
+      <h2>Statistiken</h2>
+      <div>
+        <p>Besuchte Seiten: 5</p>
+        <p>Letzte Bestellung: 20.05.2025</p>
+      </div>
+    </section>
+
+    <section class="bewertungen">
+      <h2>Prozent-Eingabe</h2>
+      <form id="prozentForm">
+        <label for="prozent">Bitte gib einen Wert von 1 bis 100 ein:</label><br>
+        <input type="number" id="prozent" name="prozent" min="1" max="100" required>
+        <button type="submit">Absenden</button>
+      </form>
+      <p id="prozentOutput" style="margin-top: 1rem; color: #0077cc;"></p>
+    </section>
+  </main>
+
+  <footer class="fade-in">
+    <p>With Love in germany oder so</p>
+    <div class="recht">
+      <a href="../legal/impressum.html">Impressum</a>
+      <a href="../datenschutz">Datenschutz</a>
+    </div>
+    <div class="social">
+      <a href="https://youtube.com"><img src="../img/youtube.png" alt="youtube"></a>
+      <p>Für Mo</p>
+    </div>
+  </footer>
+
+  <script>
+    // Fade-in Effekt
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+
+    // Prozent-Eingabe Validierung & Anzeige
+    const prozentForm = document.getElementById('prozentForm');
+    const prozentOutput = document.getElementById('prozentOutput');
+
+    prozentForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const wert = parseInt(document.getElementById('prozent').value);
+      if (wert >= 1 && wert <= 100) {
+        prozentOutput.textContent = `Dein eingegebener Prozentwert: ${wert}%`;
+      } else {
+        prozentOutput.textContent = `Ungültiger Wert! Bitte gib eine Zahl zwischen 1 und 100 ein.`;
+      }
+    });
+  </script>
+</body>
+</html>

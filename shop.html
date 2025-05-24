@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mein Shop</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 1rem;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    nav img.logo {
+      height: 40px;
+    }
+
+    nav p {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav button {
+      background-color: #fff;
+      color: #4CAF50;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    nav button:hover {
+      background-color: #e8f5e9;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    h1.Werbe {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #4CAF50;
+    }
+
+    .produkte {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .bewertungen {
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .bewertungen.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .profile-1 img.profilbild {
+      width: 100%;
+      display: block;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .profile-1 div {
+      padding: 1rem;
+    }
+
+    .profile-1 .username {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .profile-1 button {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background-color 0.3s;
+    }
+
+    .profile-1 button:hover {
+      background-color: #45a049;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    footer .recht {
+      margin-top: 0.5rem;
+    }
+
+    footer .recht a {
+      color: #bbb;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      transition: color 0.3s;
+    }
+
+    footer .recht a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header und Navigation -->
+  <header>
+    <nav>
+      <img src="https://via.placeholder.com/150x40?text=Logo" alt="Logo" class="logo" />
+      <p>Mein Shop</p>
+      <button>Warenkorb</button>
+    </nav>
+  </header>
+
+  <!-- Hauptbereich -->
+  <main>
+    <h1 class="Werbe">Willkommen in unserem Shop!</h1>
+
+    <!-- Produktübersicht -->
+    <section class="produkte">
+      <div class="bewertungen fade-in">
+        <div class="profile-1">
+          <img src="https://via.placeholder.com/250x150" alt="Produkt 1" class="profilbild" />
+          <div>
+            <p class="username">Produkt 1</p>
+            <p>Beschreibung von Produkt 1. Preis: 19,99 €</p>
+            <button>In den Warenkorb</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="bewertungen fade-in">
+        <div class="profile-1">
+          <img src="https://via.placeholder.com/250x150" alt="Produkt 2" class="profilbild" />
+          <div>
+            <p class="username">Produkt 2</p>
+            <p>Beschreibung von Produkt 2. Preis: 29,99 €</p>
+            <button>In den Warenkorb</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="bewertungen fade-in">
+        <div class="profile-1">
+          <img src="https://via.placeholder.com/250x150" alt="Produkt 3" class="profilbild" />
+          <div>
+            <p class="username">Produkt 3</p>
+            <p>Beschreibung von Produkt 3. Preis: 9,99 €</p>
+            <button>In den Warenkorb</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+  <p>&copy; 2025 Mein Shop. Alle Rechte vorbehalten.</p>
+  <div class="recht">
+    <a href="../legal/impressum.html">Impressum</a>
+    <a href="../legal/datenschutz.html">Datenschutz</a>
+    <a href="#">AGB</a>
+  </div>
+  </footer>
+
+  <!-- JavaScript für Fade-In Effekt -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const fadeIns = document.querySelectorAll(".fade-in");
+      fadeIns.forEach((el, index) => {
+        setTimeout(() => {
+          el.classList.add("visible");
+        }, 300 * index);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum</title>
+  <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <img class="logo" src="../img/logo.png" alt="Logo">
+      <p>Impressum</p>
+      <button onclick="window.location.href='/'">Zurück zur Startseite</button>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="Werbe">Impressum</h1>
+
+    <section class="bewertungen">
+      <h2>Angaben gemäß § 5 TMG</h2>
+      <p>Max Mustermann<br>
+      Musterstraße 123<br>
+      12345 Musterstadt</p>
+
+      <h2>Kontakt</h2>
+      <p>Telefon: 01234-567890<br>
+      E-Mail: <a href="mailto:max@mustermann.de">max@mustermann.de</a></p>
+
+      <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+      <p>Max Mustermann<br>
+      Musterstraße 123<br>
+      12345 Musterstadt</p>
+    </section>
+
+    <section class="bewertungen">
+      <h2>Haftungsausschluss</h2>
+      <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
+    </section>
+
+    <section class="bewertungen">
+      <h2>Urheberrecht</h2>
+      <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet.</p>
+    </section>
+  </main>
+
+  <footer class="fade-in">
+    <p>With Love in germany oder so</p>
+    <div class="recht">
+      <a href="impressum.html">Impressum</a>
+      <a href="../datenschutz">Datenschutz</a>
+    </div>
+    <div class="social">
+      <a href="https://youtube.com"><img src="../img/youtube.png" alt="youtube"></a>
+    </div>
+  </footer>
+
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+</body>
+</html>
