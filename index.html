@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="styles/style.css"/>
+  <title>Exo Skelett</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <img class="logo" src="img/logo.png" alt="Logo">
+      <p>Willkommen</p>
+      <button class="shop">Shop</button>
+      <button class="user" onclick="window.location.href='u/dashboard.html'">Dashboard</button>
+    </nav>
+  </header>
+  <main>
+    <img src="img/banner.png" alt="Produkt Banner oder so">
+    <h1 class="Werbe">Die Art sich neu fortzubewegen</h1>
+    <div class="beschreibung">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula orci in nisi tempor, ut tincidunt nulla hendrerit. Sed sit amet augue quis nibh fermentum vulputate. Proin nec lorem nec erat vulputate tristique. Nulla facilisi. Aliquam erat volutpat.</div>
+    <div class="bewertungen">
+      <h2>Das denken Leute die das Produkt schon ausprobiiert haben</h2>
+      <div class="profile-1">
+        <img class="profilbild" src="daddy" alt="profilbild">
+        <p class="username">Profil 1</p>
+        <p class="bewertung">5/5 bestes produkt eu West</p>
+      </div>
+    </div>
+  </main>
+  <footer class="fade-in">
+    <p>With <3 in germany oder so</p>
+    <div class="recht">
+      <a href="legal/impressum.html">Impressum</a>
+      <a href="legal/datenschutz">Datenschutz</a>
+    </div>
+    <div class="social">
+      <a href="https://youtube.com"><img src="/img/youtube.png" alt="youtube"></a>
+    </div>
+  </footer>
+
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+</body>
+</html>
